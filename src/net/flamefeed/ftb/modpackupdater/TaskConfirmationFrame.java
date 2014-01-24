@@ -25,12 +25,12 @@ public class TaskConfirmationFrame extends javax.swing.JFrame {
     /**
      * Creates new form TaskConfirmationFrame
      * 
-     * @param fileOperator
-     * A pre-initialised instance of the FileOperator class should be sent to
-     * this constructor.
      */
-    public TaskConfirmationFrame(FileOperator fileOperator) {
-        this.fileOperator = fileOperator;
+    
+    public TaskConfirmationFrame() {
+        // This class will manage all file related tasks. Constructor performs
+        // program initialisation
+        fileOperator = new FileOperator();  
         initComponents();
     }
     

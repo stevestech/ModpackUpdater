@@ -21,11 +21,7 @@ public class ModpackUpdater {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        // This class will manage all file related tasks. Constructor performs
-        // program initialisation
-        final FileOperator fileOperator = new FileOperator();                
-                
+    public static void main(String[] args) {               
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -56,7 +52,7 @@ public class ModpackUpdater {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new TaskConfirmationFrame(fileOperator).setVisible(true);
+                new TaskConfirmationFrame().setVisible(true);
             }
         });                                   
     }   

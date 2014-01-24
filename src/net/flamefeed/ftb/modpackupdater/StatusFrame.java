@@ -295,6 +295,9 @@ public class StatusFrame extends javax.swing.JFrame {
     }    
     
     public void allTasksCompleted() {
+        // Close StatusFrame
+        this.dispose();
+        
         JOptionPane.showMessageDialog(null, "Your mod-pack is now ready to use. Open the vanilla Minecraft launcher\n"
                     + "and select the FTB Unleashed profile to start up the mod-pack");
         
