@@ -1,4 +1,4 @@
-ModpackUploader
+ModpackUpdater
 ===============
 
 A utility for synchronising Minecraft Forge mods between client and server.
