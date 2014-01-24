@@ -148,8 +148,10 @@ public class StatusFrame extends javax.swing.JFrame {
          * @throws IOException
          */
 
-        private void downloadFile(String path) throws IOException {
+        private void downloadFile(String path) throws IOException {                        
             String localFilePath = fileOperator.getMinecraftPath() + "/" + path;
+            
+            fileOperator.createDirectories(path);
 
             // Connect to the site using the URL object and determine file size
             URL url = new URL(fileOperator.REMOTE_FILES_LOCATION + "/" + path);
@@ -320,6 +322,7 @@ public class StatusFrame extends javax.swing.JFrame {
         overallProgressBar = new javax.swing.JProgressBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setResizable(false);
 
         jLabel1.setText("Current task:");
 

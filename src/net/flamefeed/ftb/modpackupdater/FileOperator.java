@@ -23,6 +23,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import static org.apache.commons.io.FileUtils.iterateFiles;
 import org.apache.commons.io.filefilter.TrueFileFilter;
@@ -194,23 +196,13 @@ public class FileOperator {
      */    
     
     public void createDirectories(String path) {
-        /*
-         * Split path into each of its directories.        
-         */
-        
-        String[] directories = path.split("/");
-        
-        /*
-         * The last element of directories will be the name of the file itself.
-         * As we don't want to create a directory with this name, we use
-         * x < directories.length - 1
-         *
-         * If the directory already exists, calling mkdir() will do nothing.
-         */
-        
-        for(int x=0; x < (directories.length - 1); x++) {
-            new File(pathMinecraft + "/" + directories[x]).mkdir();
-        }        
+        // Get absolute path
+        path = pathMinecraft + "/" + path;
+        // Find the directory in which this file is located
+        String bottomDirectory = new File(path).getParent();        
+        // Create this bottom directory and any necessary parent directories
+        // which may not yet exist
+        new File(bottomDirectory).mkdirs();
     }
     
     /**

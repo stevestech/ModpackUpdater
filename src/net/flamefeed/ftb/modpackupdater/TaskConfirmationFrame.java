@@ -107,8 +107,7 @@ public class TaskConfirmationFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("The Beast Unleashed Modpack Updater");
-
-        jTabbedPane2.setPreferredSize(null);
+        setResizable(false);
 
         jScrollPane3.setViewportView(downloadCheckBoxList);
         initDownloadCheckBoxList();
@@ -196,7 +195,7 @@ public class TaskConfirmationFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1)
                 .addContainerGap())
-            .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jTabbedPane2)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
